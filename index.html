@@ -21,35 +21,54 @@
 		<link rel='stylesheet' href='./styles/main.css' type='text/css'>
 		<script src='./scripts/script.js'></script>
 		
-		<title> Document </title>
+		<title> The Library </title>
 	</head>
 	
 	<body>
-
-		<!-- ^ NAVIGATION MENU -->
-		<nav>
-			<a href='./index.html' class='home_link'>
-				Home
-			</a>
-		</nav>
 
 		<!-- ^ HEADER -->
 		<header>
 			
 			<!-- Logo & Header-->
-			<img src='./media/graphics/Website_Logo.svg' alt='Logo'>
-			<h1> Website Name </h1>
+			<h1> The Library </h1>
 			
 		</header>
 		
 		<!-- ^ MAIN -->
 		<main>
 			
+			<section id="add_book_section">
+				<form>
+					
+					<div class="input">
+						<label for="book_title"> Book Title </label>	
+						<input type="text" name="book_title" id="book_title_input" placeholder="Your Title Here" required>
+					</div>
+					<div class="input">
+						<label for="book_author"> Author </label>
+						<input type="text" name="book_author" id="book_author_input" placeholder="Firstname Lastname" required>
+					</div>
+					<div class="input">
+						<label for="book_total_pages"> Total Pages </label>
+						<input type="number" name="book_total_pages" id="book_total_pages_input" required>
+					</div>
+					<div class="input checkbox_input">
+						<input type="checkbox" name="book_hasBeenRead" id="book_hasBeenRead_input">
+						<label for="book_hasBeenRead"> Read Book </label>
+					</div>
+					
+				</form>
+				
+				<button onclick="addBookToLibrary()">
+					+ Add Book
+				</button>
+			</section>
+			
 			<section>
-				<h2> Heading </h2>
-				<p> 
-					paragraph
-				</p>
+				<h2> List of Books </h2>
+
+				<div id="book_container">
+				</div>
 			</section>
 			
 		</main>
@@ -58,8 +77,9 @@
 		<footer>
 				
 			<div>
-				<h2> HEADING </h2>
-				<p> paragraph </p>
+				<h2> CREATED BY </h2>
+				<p> Alexander Carron </p>
+				<p> <a href="mailto:thealexcarron@gmail.com">thealexcarron@gmail.com</a> </p>
 			</div>
 			
 		</footer>

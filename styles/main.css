@@ -3,11 +3,13 @@
 	--most-light-color: #FFFFFF;
 	--very-light-color: #E6E6E6;
 	--call-to-action-color: #ffbf00;
-	--bright-color: #2957c2;
+	--bright-color: #c3beb5;
 	--light-color: #3055aa;
 	--dark-color: #265471;
 	--very-dark-color: #343434;
 	--most-dark-color: #000000;
+	--dark-good-color: #143116;
+	--dark-bad-color: #311414;
 }
 
 @font-face {
@@ -107,11 +109,133 @@ nav {
 		background: var(--most-light-color);
 		color: var(--most-dark-color);
 	}
-
-		/* ! Every Other Section */
-		main>section:nth-child(2n) {
-			background: var(--very-light-color);
+	
+	/* @ Add Book Form Section */
+	main>section#add_book_section {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+		
+		/* ! Add Book Button */
+		main>section#add_book_section button {
+			background: var(--call-to-action-color);
+			width: max-content;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 10px;
+			
+			font-size: 26px;
+			font-weight: bold;
+			
+			cursor: pointer;
 		}
+		
+		/* ! Add Book Form */
+		main>section#add_book_section form {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+		
+			/* & Input Containers */
+			main>section#add_book_section div.input {
+				display: flex;
+				flex-direction: column;
+				gap: 3px;
+			}
+		
+				/* & Labels */
+				main>section#add_book_section label {
+					font-size: 18px;
+					color: var(--dark-color);
+				}
+		
+				/* & Inputs */
+				main>section#add_book_section input {
+					width: min(250px, 100%);
+					font-size: 18px;
+					font-weight: bold;
+					border: 3px solid var(--dark-color);
+					border-radius: 5px;
+				}
+		
+			/* & Checkbox Input Container */
+			main>section#add_book_section div.checkbox_input {
+				display: flex;
+				flex-direction: row;
+				gap: 5px;
+			}
+		
+				/* & Checkbox Input */
+				main>section#add_book_section div.checkbox_input input {
+					width: auto;
+				}
+		
+	/* @ Books */
+		/* ! Book Container */
+		main>section>div#book_container {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+		}
+	
+			/* ! Books */
+			main>section>div#book_container>div.book {
+				display: flex;
+				flex-direction: column;
+				width: max-content;
+				margin: 10px;
+				padding: 15px;
+				padding-right: 20px;
+				
+				background: var(--bright-color);
+				border-radius: 10px 0 0 10px;
+				box-shadow: 0 0 15px 0px #00000030;
+			}
+		
+				/* & Title */
+				main div.book h3.book_title {
+					margin: 0 0 2px;
+					
+					font-size: 26px;
+				}
+				
+				/* & Bottom Book Section */
+				main div.book div.bottom_of_book_container {
+					margin-top: 200px;
+					display: flex;
+					gap: 25px;
+				}
+		
+					/* ~ Total Pages */
+					main div.book p.book_total_pages {
+						color: var(--very-dark-color);
+						font-size: 14px;
+					}
+			
+					/* ~ Read Status */
+					main div.book p.book_read_status {
+						margin-left: auto;
+						
+						font-size: 14px;
+						text-align: right;
+					}
+				
+						/* ~ Read Status */
+						main div.book p.not_read {
+							color: var(--dark-bad-color);
+						}
+				
+						/* ~ Not Read Status */
+						main div.book p.read {
+							color: var(--dark-good-color);
+						}
+
+	/* @ Every Other Section */
+	main>section:nth-child(2n) {
+		background: var(--very-light-color);
+	}
 		
 		/* ! Section Header */
 		main>section h2 {
@@ -131,8 +255,6 @@ nav {
 		main>section p {
 			font-size: 14pt;
 			margin-top: 10px;
-			
-			overflow: hidden;
 		}
 		
 /* ^ FOOTER */
@@ -165,9 +287,11 @@ footer {
 		}
 
 		/* ! Footer Headers */
-		footer h1 {
+		footer h2 {
 			font-size: 18pt;
 			font-weight: bold;
+
+			margin-bottom: 10px;
 		}
 
 		/* ! Footer Body Paragraph Text */
@@ -211,4 +335,17 @@ strong {
 	grid-auto-rows: 1fr;
 	grid-auto-columns: 1fr;
 	gap: 0px;
+}
+
+/* * Inputs */
+div.input{
+	display: flex;
+	flex-direction: column;
+}
+
+/* * Input Labels */
+label {
+	font-weight: 550;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }

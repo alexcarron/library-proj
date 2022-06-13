@@ -1,4 +1,4 @@
-let myLibrary = [];
+let myLibrary = {};
 
 
 // ! Book Constructor
@@ -48,7 +48,7 @@ function addBookToLibrary() {
 		input_values.book_hasBeenRead
 	)
 
-	myLibrary.push(book);
+	myLibrary[book.title] = book;
 	
 	displayBooksInLibrary(myLibrary);
 }
@@ -60,10 +60,17 @@ function displayBooksInLibrary(library) {
 	
 	book_container.innerHTML = ''
 	
-	for (book of library) {
+	for (book_property in library) {
+		let book = library[book_property];
+		
+		console.log( {library, book_property, book})
+		
 		book_container.innerHTML += `
 			<div class="book">
-				<h3 class="book_title"> ${book.title} </h3>
+				<div class="top_oc_book_container">
+					<h3 class="book_title"> ${book.title} </h3>
+					<button onclick="removeBook()">
+				</div>
 				<p class="book_author"> by ${book.author} </p>
 				<div class="bottom_of_book_container">
 					<p class="book_total_pages"> ${book.total_pages} pages </p>

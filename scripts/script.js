@@ -1,21 +1,21 @@
 let myLibrary = [];
 
-
 // ! Book Constructor
-function Book(title, author, total_pages, hasBeenRead) {
-	this.title = title
-	this.author = author
-	this.total_pages = total_pages
-	this.hasBeenRead = hasBeenRead
+class Book {
+	constructor(title, author, total_pages, hasBeenRead) {
+		this.title = title
+		this.author = author
+		this.total_pages = total_pages
+		this.hasBeenRead = hasBeenRead
+	}
+	getBookInfo() {
+		return `The ${this.title} by ${this.author} is ${this.total_pages} pages and has ${this.hasBeenRead ? `been read` : `not been read yet`}.`
+	}
+	toggleReadStatus() {
+		this.hasBeenRead = !this.hasBeenRead
+	}
+	
 }
-
-Book.prototype.getBookInfo = function() {
-	return `The ${this.title} by ${this.author} is ${this.total_pages} pages and has ${this.hasBeenRead ? `been read` : `not been read yet`}.`
-}
-Book.prototype.toggleReadStatus = function() {
-	this.hasBeenRead = !this.hasBeenRead
-}
-
 
 // ! FUNCTION: Add book to library
 function addBookToLibrary() {

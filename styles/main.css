@@ -8,7 +8,9 @@
 	--dark-color: #265471;
 	--very-dark-color: #343434;
 	--most-dark-color: #000000;
+	--bright-good-color: #a7cdaa;
 	--dark-good-color: #143116;
+	--bright-bad-color: #cda7a7;
 	--dark-bad-color: #311414;
 }
 
@@ -201,6 +203,26 @@ nav {
 					font-size: 26px;
 				}
 				
+				/* & Top Book Section */
+				main div.book div.top_of_book_container {
+					display: flex;
+					gap: 25px;
+				}
+				
+					/* ~ Remove Book Button */
+					main div.book div.top_of_book_container button.remove_book_button {
+						aspect-ratio: 1;
+						height: 26px;
+						margin-left: auto;
+						background: var(--bright-bad-color);
+						border: none;
+						border-radius: 50%;
+						
+						color: var(--dark-bad-color);
+						
+						cursor: pointer;
+					}
+				
 				/* & Bottom Book Section */
 				main div.book div.bottom_of_book_container {
 					margin-top: 200px;
@@ -220,6 +242,8 @@ nav {
 						
 						font-size: 14px;
 						text-align: right;
+						
+						cursor: pointer;
 					}
 				
 						/* ~ Read Status */
